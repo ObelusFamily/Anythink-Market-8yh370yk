@@ -71,7 +71,7 @@ async def create_new_item(
     if item_create.image:
         pass
     else:
-        get_dalle_default_image(item_create.title)
+        item_create.image=get_dalle_default_image(item_create.title)
     item = await items_repo.create_item(
         slug=slug,
         title=item_create.title,
